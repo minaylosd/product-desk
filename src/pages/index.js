@@ -92,7 +92,23 @@ export default function Home({ productData }) {
 
   return (
     <>
-      <Header></Header>
+      <div className="header__div">
+        {aspectRatio > 4 && (
+          <>
+            <Header />
+          </>
+        )}
+        {aspectRatio > 3 && (
+          <>
+            <Header />
+          </>
+        )}
+        {aspectRatio > 1.5 && (
+          <>
+            <Header />
+          </>
+        )}
+      </div>
       <div style={gridStep} className="products__grid">
         {newData.map((group) => (
           <div key={group.group} className="group">
@@ -160,7 +176,23 @@ export default function Home({ productData }) {
           ></img>
         )}
       </div>
-      <Footer></Footer>
+      <div className="footer__div">
+        {aspectRatio > 4 && (
+          <>
+            <Footer />
+          </>
+        )}
+        {aspectRatio > 3 && (
+          <>
+            <Footer />
+          </>
+        )}
+        {aspectRatio > 1.5 && (
+          <>
+            <Footer />
+          </>
+        )}
+      </div>
     </>
   );
 }

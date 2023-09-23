@@ -36,6 +36,10 @@ span {
   color: var(--cl-darkred);
 }
 
+.header__div {
+  display: flex;
+}
+
 .header {
   display: flex;
   gap: 32px;
@@ -52,6 +56,12 @@ span {
   height: 32px;
   border-radius: 32px;
   background-color: var(--cl-darkred);
+}
+
+.footer__div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .footer {
