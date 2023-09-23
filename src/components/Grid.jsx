@@ -36,7 +36,7 @@ export const Grid = ({ flexLayout, productData }) => {
           return newPosition;
         }
       });
-    }, 10000);
+    }, 30000);
 
     return () => clearInterval(scrollInterval);
   }, []);
@@ -60,9 +60,14 @@ export const Grid = ({ flexLayout, productData }) => {
                 <div className="column__info">
                   <div>
                     <div className="product__name">
-                      {product.name.length > 12
-                        ? `${product.name.substring(0, 12)}...`
-                        : product.name}
+                      {product.name.length > 14 ? (
+                        <div className="h4 animate">
+                          <h4>{product.name}</h4>
+                          <h4>{product.name}</h4>
+                        </div>
+                      ) : (
+                        <h4>{product.name}</h4>
+                      )}
                     </div>
                     <div className="product__info">
                       Алк. {product.alcohol}% Пл. {product.density}%{" "}
