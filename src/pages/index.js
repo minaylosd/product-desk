@@ -1,8 +1,8 @@
-import styles from "@/styles/globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Grid } from "@/components/Grid";
 import { useEffect, useState } from "react";
+import "./globals.css";
 
 function AspectRatioTracker() {
   const [aspectRatio, setAspectRatio] = useState(null);

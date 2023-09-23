@@ -47,77 +47,83 @@ export const Grid = ({ flexLayout, productData }) => {
 
   return (
     <>
-      <div style={gridStep} className="products__grid">
-        {newData.map((group) => (
-          <div key={group.group} className="group">
-            <div className="info__wrapper">
-              <div className="column__name">{group.group}</div>
-              <div className="column__name">Цена</div>
-              <div className="column__name">Акция</div>
-            </div>
-            {group.products.map((product) => (
-              <div className="product" key={product.name}>
-                <div className="column__info">
-                  <div>
-                    <div className="product__name">
-                      {product.name.length > 14 ? (
-                        <div className="h4 animate">
-                          <h4>{product.name}</h4>
-                          <h4>{product.name}</h4>
-                        </div>
-                      ) : (
-                        <h4>{product.name}</h4>
-                      )}
+      <div className="background">
+        <div style={gridStep} className="products__grid">
+          {newData.map((group) => (
+            <div key={group.group} className="group">
+              <div className="info__wrapper">
+                <div className="column__name">{group.group}</div>
+                <div className="column__name">Цена</div>
+                <div className="column__name">Акция</div>
+              </div>
+              {group.products.map((product) => (
+                <div className="product" key={product.name}>
+                  <div className="column__info">
+                    <div className="grow">
+                      <div className="product__name">
+                        {product.additionally[0].img.src[
+                          "$playback-data-resource"
+                        ] ||
+                        (product.additionally[0].img.src &&
+                          product.name.length > 14) ? (
+                          <div className="h4 animate">
+                            <div>{product.name}</div>
+                            <div>{product.name}</div>
+                          </div>
+                        ) : (
+                          <div>{product.name}</div>
+                        )}
+                      </div>
+                      <div className="product__info">
+                        Алк. {product.alcohol}% Пл. {product.density}%{" "}
+                        {product.city}
+                      </div>
                     </div>
-                    <div className="product__info">
-                      Алк. {product.alcohol}% Пл. {product.density}%{" "}
-                      {product.city}
-                    </div>
+                    <img
+                      className="product__img"
+                      src={
+                        product.additionally[0].img.src[
+                          "$playback-data-resource"
+                        ] || product.additionally[0].img.src
+                      }
+                    />
                   </div>
-                  <img
-                    className="product__img"
-                    src={
-                      product.additionally[0].img.src[
-                        "$playback-data-resource"
-                      ] || product.additionally[0].img.src
-                    }
-                  />
-                </div>
-                <div className="column__price">
-                  {product.price}
+                  <div className="column__price">
+                    {product.price}
+                    {product.priceByCard !== 0 && !product.discount.length && (
+                      <div className="stroke"></div>
+                    )}
+                  </div>
                   {product.priceByCard !== 0 && !product.discount.length && (
-                    <div className="stroke"></div>
+                    <div className="column__promo">{product.priceByCard}</div>
+                  )}
+                  {product.discount.length > 0 && (
+                    <div
+                      className={`${
+                        product.discount[0].length > 5
+                          ? "promo__minimised"
+                          : "column__promo"
+                      }`}
+                    >
+                      {product.discount[0]}
+                    </div>
                   )}
                 </div>
-                {product.priceByCard !== 0 && !product.discount.length && (
-                  <div className="column__promo">{product.priceByCard}</div>
-                )}
-                {product.discount.length > 0 && (
-                  <div
-                    className={`${
-                      product.discount[0].length > 5
-                        ? "promo__minimised"
-                        : "column__promo"
-                    }`}
-                  >
-                    {product.discount[0]}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        ))}
-        {productData[0].additionally[0].img.src === "" ? (
-          <img
-            className="poster"
-            src="https://ae04.alicdn.com/kf/H9a0580ed27b64ef08dfce964d5709475K.jpg"
-          ></img>
-        ) : (
-          <img
-            className="poster"
-            src={productData[0].additionally[0].img.src}
-          ></img>
-        )}
+              ))}
+            </div>
+          ))}
+          {productData[0].additionally[0].img.src === "" ? (
+            <img
+              className="poster"
+              src="https://ae04.alicdn.com/kf/H9a0580ed27b64ef08dfce964d5709475K.jpg"
+            ></img>
+          ) : (
+            <img
+              className="poster"
+              src={productData[0].additionally[0].img.src}
+            ></img>
+          )}
+        </div>
       </div>
     </>
   );
