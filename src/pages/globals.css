@@ -77,7 +77,7 @@ span {
 .products__grid {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 80px;
+  margin-left: 80px;
   flex-direction: column;
   height: 1760px;
   overflow-x: scroll;
