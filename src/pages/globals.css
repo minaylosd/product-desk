@@ -230,6 +230,21 @@ span {
   width: 208px;
 }
 
+.poster__wrapper {
+  display: 'flex';
+  flex-direction: 'column';
+  flex: 1;
+  min-height: 900px;
+  max-width: 1126px;
+  width: 100%;
+  position: relative;
+}
+
 .poster {
-  width: 1064px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -112,15 +112,14 @@ export const Grid = ({ flexLayout, productData }) => {
             </div>
           ))}
           {productData[0].additionally[0].img.src === "" ? (
-            <img
-              className="poster"
-              src="https://ae04.alicdn.com/kf/H9a0580ed27b64ef08dfce964d5709475K.jpg"
-            ></img>
+            ""
           ) : (
-            <img
-              className="poster"
-              src={productData[0].additionally[0].img.src}
-            ></img>
+            <div className="poster__wrapper">
+              <img
+                className="poster"
+                src={productData[0].additionally[0].img.src}
+              ></img>
+            </div>
           )}
         </div>
       </div>
