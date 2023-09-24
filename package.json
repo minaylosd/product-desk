@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export && npm run replaceFilePaths",
+    "replaceFilePaths": "node replacer.js",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +14,7 @@
     "eslint-config-next": "13.5.2",
     "next": "13.5.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "replace-in-file": "^7.0.1"
   }
 }
