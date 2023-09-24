@@ -146,18 +146,6 @@ span {
   font-size: 76px;
 }
 
-@keyframes moveLeft {
-  0% {
-    transform: translateX(0);
-  }
-  15% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .h4 {
   display: flex;
   gap: 150px;
@@ -167,7 +155,7 @@ span {
 }
 
 .animate {
-  animation: moveLeft 15s linear 30s infinite;
+  animation: moveLeft 15s linear infinite;
 }
 
 .product__info {

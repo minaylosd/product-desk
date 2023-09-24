@@ -1,0 +1,11 @@
+@keyframes moveLeft {
+    0% {
+      transform: translateX(0);
+    }
+    15% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1*(100% - 150px)/2 - 150px));
+    }
+  }

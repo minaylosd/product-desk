@@ -23,7 +23,6 @@ export const Grid = ({ flexLayout, productData }) => {
   useEffect(() => {
     const element = document.querySelector(".products__grid");
     const realWidth = element.scrollWidth;
-    console.log("grid width:", realWidth);
 
     const scrollInterval = setInterval(() => {
       setScrollPosition((prevPosition) => {

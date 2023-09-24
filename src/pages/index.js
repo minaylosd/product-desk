@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Grid } from "@/components/Grid";
 import { useEffect, useState } from "react";
 import "./globals.css";
+import "./keyframes.css";
 
 function AspectRatioTracker() {
   const [aspectRatio, setAspectRatio] = useState(null);
