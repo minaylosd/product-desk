@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const Grid = ({ flexLayout, productData }) => {
+  console.log(productData);
   const categories = productData[0].groups;
 
   function splitGroup(group) {
